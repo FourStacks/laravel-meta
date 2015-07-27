@@ -138,6 +138,14 @@ trait Metable
             ->whereValue($value)
             ->get();
     }
+    
+    public function whereMetaKeyContains($keyPartial, $id)
+    {
+        return $this->getModelStub()
+            ->where('key', 'LIKE', "$keyPartial%")
+            ->where('user_id', '=', $id)
+            ->get();
+    }
 
     /**
      * Trait specific functions
