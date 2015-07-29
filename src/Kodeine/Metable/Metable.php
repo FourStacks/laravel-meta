@@ -139,11 +139,11 @@ trait Metable
             ->get();
     }
     
-    public function whereMetaKeyContains($keyPartial, $contraint, $id)
+    public function whereMetaKeyContains($keyPartial, $constraint, $id)
     {
         return $this->getModelStub()
             ->where('key', 'LIKE', "%$keyPartial%")
-            ->where($contraint, '=', $id)
+            ->where($constraint, '=', $id)
             ->get();
     }
 
